@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+  <title>WebRTC Accelerometer</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script type="text/javascript" src="peer.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+  <div class="pure-g">
+    <!-- Video area -->
+    <div class="pure-u-2-3" id="accData">
+      <h3>Peer Acc Stream</h3>
+      <div id="their-acc"></div>
+      <h3>Local Acc Stream</h3>
+      <div id="my-accc"></div>
+    </div>
+    
+    <!-- Steps -->
+    <div class="pure-u-1-3">
+      <!-- Get Local Accelerometer Data Stream-->
+      <div id="startAcc">
+	<p>このデバイスの加速度センサのデータを取得する</p>
+	<button class="pure-button">Get ACC</button>
+	<div id="startAccErr">
+	  <p>加速度センサの値がとれません</p>
+	  <a href="#" class="pure-button pure-button-error" id="step1Retry">Re-Get Acc</a>
+	</div>
+      </div>
+            
+      <!-- Make calls to others -->
+      <div id="startCall">
+        <p>My Peerid: <span id="my-id">...</span></p>
+	<h3>相手を呼び出す</h3>
+        <div class="pure-form">
+          <input type="text" placeholder="Call user id..." id="callto-id">
+          <a href="#" class="pure-button pure-button-success" id="make-call">Call</a>
+        </div>
+      </div>
+      
+      <!-- Call in progress -->
+      <div id="callInProgress">
+        <p>接続先：<span id="their-id">...</span></p>
+        <a href="#" class="pure-button pure-button-error" id="end-call">End Connection</a>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
